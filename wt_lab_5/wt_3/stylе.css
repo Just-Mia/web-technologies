@@ -1,0 +1,92 @@
+﻿
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f7f9fc;
+    color: #333;
+    margin: 20px;
+    line-height: 1.6;
+}
+
+h1, h2 {
+    text-align: center;
+    color: #004080;
+}
+
+
+main {
+    max-width: 700px;
+    margin: 0 auto;
+    background: #fff;
+    padding: 20px 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+a {
+    color: #0066cc;
+    text-decoration: none;
+}
+
+    a:hover {
+        text-decoration: underline;
+    }
+
+
+input, textarea, select, button {
+    display: block;
+    width: 100%;
+    margin-top: 6px;
+    margin-bottom: 15px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    box-sizing: border-box;
+}
+
+
+fieldset {
+    margin-bottom: 20px;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #fefefe;
+}
+
+legend {
+    font-weight: bold;
+    color: #004080;
+}
+
+
+button {
+    background-color: #004080;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 1em;
+    border-radius: 5px;
+}
+
+    button:hover {
+        background-color: #0066cc;
+    }
+
+
+textarea {
+    resize: vertical;
+    min-height: 60px;
+}
+
+
+label {
+    font-weight: bold;
+    display: block;
+}
+
+
+hr {
+    border: none;
+    border-top: 1px solid #ddd;
+    margin: 30px 0;
+}
