@@ -1,0 +1,36 @@
+﻿<!doctype html>
+<html lang="uk">
+<head>
+    <meta charset="utf-8">
+    <title>Lab4_1 — Властивості шрифту та тексту</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Три абзаци -->
+    <!-- 1-й абзац: має клас .red і додатково клас .nowrap (заборонити перенесення) -->
+    <p class="red nowrap">Це перший абзац. Тут трохи тексту, щоб показати зміну кольору та заборону перенесення рядка. Увесь цей абзац буде відображатися в один рядок через правило, яке забороняє перенос рядка (white-space: nowrap).</p>
+
+    <!-- 2-й абзац: має id="second" і клас .shadowText -->
+    <p id="second" class="shadowText">Це другий абзац. Він правильно відформатований курсивом та жирним (через селектор id). До цього абзацу також застосована тінь тексту через клас .shadowText (той же клас буде застосований і до другого блоку div).</p>
+
+    <!-- 3-й абзац: має клас .red -->
+    <p class="red">Це третій абзац. Він також має червоний колір тексту (клас .red). Тут трохи тексту-риба, який можна замінити на будь-який інший тест.</p>
+
+    <!-- Два блочні елементи div з текстом-риба по 50 слів в кожному -->
+    <div class="first-block">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vel orci nec neque volutpat
+        volutpat. Sed euismod, nunc at convallis posuere, mauris neque facilisis urna, vitae
+        ullamcorper nisl nunc et sapien. Cras sit amet arcu vel justo interdum venenatis. Donec
+        pharetra sapien sed velit consequat, a pretium sem placerat.
+    </div>
+
+    <div class="second-block shadowText">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus nec velit sed urna
+        facilisis gravida. Nam id dolor vitae lorem facilisis tincidunt. Aenean dictum, sapien sed
+        fermentum cursus, eros lacus tincidunt arcu, vitae porttitor lorem purus in erat. Mauris
+        lacinia nunc non justo volutpat, at tincidunt nibh posuere.
+    </div>
+
+</body>
+</html>

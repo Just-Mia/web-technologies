@@ -1,0 +1,67 @@
+﻿/* 2. Універсальний селектор для всього контенту:
+   font-family: Arial; font-size: 20px; інтервал між рядками 40px (використано line-height) */
+* {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    line-height: 40px; /* "інтервал між текстом в 40px" */
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Додаємо невеликі відступи між блоками, щоб виглядало охайніше */
+body {
+    padding: 20px;
+}
+
+/* 3. Селектор тегів: для всіх абзаців зелений колір і вирівнювання по центру */
+p {
+    color: green;
+    text-align: center;
+    margin-bottom: 16px;
+}
+
+/* Селектор тегів для всіх блочних елементів (div) - вирівнювання по ширині */
+div {
+    text-align: justify;
+    margin: 18px 0;
+    padding: 10px;
+    border: 1px solid #ddd;
+}
+
+/* 4. Клас для 1-го та 3-го абзаців - змінюємо колір тексту на червоний */
+.red {
+    color: red;
+}
+
+/* 5. Клас для 1-го абзацу: заборонити перенесення рядка (весь текст в один рядок) */
+.nowrap {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis; /* якщо дуже довго — покаже три крапки */
+}
+
+/* 6. Селектор ідентифікатора для 2-го абзацу — курсив та жирний */
+#second {
+    font-style: italic;
+    font-weight: bold;
+}
+
+/* 7. Клас, який додає тінь до тексту (застосовується до 2-го абзацу та 2-го div) */
+/* гор. зміщення 5px, верт. зміщення -5px, розмиття 3px, вибраний колір тіні rgba */
+.shadowText {
+    text-shadow: 5px -5px 3px rgba(0,0,0,0.35);
+}
+
+/* 8. Клас для 1-го блочного елементу: перекреслений текст, верхній регістр, відступ першого рядка 50px */
+.first-block {
+    text-decoration: line-through;
+    text-transform: uppercase;
+    text-indent: 50px;
+}
+
+/* 9. Клас для 2-го блочного елементу: інтервал між символами 30px; між словами 50px */
+.second-block {
+    letter-spacing: 30px;
+    word-spacing: 50px;
+}

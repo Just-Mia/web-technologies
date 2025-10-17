@@ -1,0 +1,29 @@
+﻿
+
+ul.ref a {
+    color: purple;
+}
+
+a.ref {
+    color: green;
+}
+
+ul.sqr li {
+    list-style: square;
+}
+
+ul.pic li {
+    list-style-image: url(li.svg);
+}
+
+ul.sqr a {
+    text-decoration: none;
+}
+
+ul.non li {
+    list-style: none;
+}
+
+ol {
+    list-style-position: inside;
+}
