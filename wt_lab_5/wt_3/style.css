@@ -1,0 +1,144 @@
+﻿/* --- Базові налаштування шрифту/тексту/фону --- */
+:root {
+    --bg-start: #0f172a; /* темний фон зверху */
+    --bg-end: #0b5d78; /* темний-бірюзовий внизу */
+    --card-bg: rgba(255,255,255,0.04);
+    --accent: #ffb86b; /* акцент (для кнопки/заголовків) */
+    --muted: #cbd5e1; /* приглушений колір тексту */
+    --text: #f8fafc; /* основний колір тексту */
+    --glass: rgba(255,255,255,0.06);
+}
+
+/* Скидання */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background: linear-gradient(180deg, var(--bg-start) 0%, var(--bg-end) 100%);
+    color: var(--text);
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.45;
+    padding: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Основна сторінка (контейнер) */
+.page {
+    width: min(1000px, 95%);
+    background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+    border-radius: 12px;
+    padding: 26px;
+    box-shadow: 0 8px 30px rgba(2,6,23,0.6);
+    border: 1px solid rgba(255,255,255,0.04);
+}
+
+/* Заголовок */
+.title {
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: 0.2px;
+    color: var(--accent);
+    margin-bottom: 6px;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.6);
+}
+
+/* Підзаголовок / опис */
+.subtitle {
+    color: var(--muted);
+    font-size: 14px;
+    margin-bottom: 18px;
+}
+
+/* Обгортка карти */
+.map-wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--card-bg);
+    padding: 18px;
+    border-radius: 10px;
+    border: 1px solid rgba(255,255,255,0.03);
+}
+
+/* Зображення карти: адаптивне, з ефектом при наведенні */
+.map-img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+    box-shadow: 0 6px 22px rgba(2,6,23,0.6);
+    transition: transform 260ms ease, filter 260ms ease;
+    filter: saturate(1.02) contrast(1.02);
+}
+
+    /* Легка анімація при наведенні на зображення */
+    .map-img:hover {
+        transform: translateY(-6px) scale(1.01);
+        filter: saturate(1.08) contrast(1.06);
+    }
+
+/* Нижній футер і кнопка-посилання */
+.page__footer {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+/* Стиль посилання-повернення як кнопки */
+.btn-back {
+    display: inline-block;
+    background: linear-gradient(90deg, #ffb86b, #ff8a65);
+    color: #071023;
+    padding: 10px 16px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 700;
+    box-shadow: 0 6px 18px rgba(255,136,102,0.18);
+    transition: transform 160ms ease, box-shadow 160ms ease;
+}
+
+    /* Ховер / фокус для кнопки */
+    .btn-back:hover,
+    .btn-back:focus {
+        transform: translateY(-3px);
+        box-shadow: 0 10px 24px rgba(255,136,102,0.28);
+        outline: none;
+    }
+
+/* Підказка / нотатка */
+.note {
+    color: var(--muted);
+    font-size: 13px;
+    margin-left: 8px;
+}
+
+/* Адаптивність: на дрібних екранах зменшуємо заголовок і вирівнюємо футер */
+@media (max-width: 640px) {
+    .title {
+        font-size: 20px;
+    }
+
+    .page__footer {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 8px;
+    }
+
+    .btn-back {
+        width: 100%;
+        text-align: center;
+    }
+}
