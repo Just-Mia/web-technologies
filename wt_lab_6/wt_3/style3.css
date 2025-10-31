@@ -19,7 +19,7 @@ header {
     width: 100px;
 }
 
-.horizontal-menu {
+.horizon-menu {
     float: inline-end;
     list-style-type: none;
     margin: 0;
@@ -42,21 +42,21 @@ main {
     color: #ffffff;
 }
 
-.coloured-monolithic {
+.coloured-block13 {
     margin-top: 20px;
     border-radius: 70px;
     padding: 15px 30px;
     background: #5e1212;
 }
 
-.coloured-parent {
+.coloured-block14 {
     margin-top: 20px;
     background: #975959;
     border-radius: 70px;
     padding: 15px 30px;
 }
 
-.coloured-derived {
+.coloured-block-15-16 {
     box-sizing: border-box;
     width: 500px;
     background: #ac3131;
@@ -78,7 +78,4 @@ p {
     clear: both;
 }
 
-strong {
-    font-size: 18px;
-}
-}
+

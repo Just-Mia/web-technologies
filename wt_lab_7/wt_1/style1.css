@@ -1,0 +1,42 @@
+﻿body {
+    position: relative;
+    background-color: white;
+    height: 350px;
+}
+
+.block {
+    width: 240px;
+    height: 130px;
+    background-color: cornflowerblue;
+    border: 2px solid black;
+    font-weight: bold;
+    color: white;
+    position: absolute;
+    padding-top: 10px;
+    text-align: center;
+}
+
+.block-left {
+    top: 100px;
+    left: 250px;
+}
+
+.block-right {
+    top: 100px;
+    left: 520px;
+}
+
+
+.block-bottom {
+    width: 510px;
+    height: 70px;
+    background-color: rebeccapurple;
+    color: white;
+    border: 2px solid black;
+    text-align: center;
+    position: absolute;
+    top: 270px;
+    left: 250px;
+    line-height: 60px;
+    font-size: 18px;
+}

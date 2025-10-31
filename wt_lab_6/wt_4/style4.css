@@ -19,7 +19,7 @@ header {
     width: 100px;
 }
 
-.horizontal-menu {
+.horizon-menu {
     float: inline-end;
     list-style-type: none;
     margin: 0;
@@ -78,15 +78,15 @@ strong {
 }
 
 .multicoloured-shadow {
-    box-shadow: inset 5px 0 red, inset 0 5px green, inset -5px 0 blue, inset 0 -5px darkorange;
+    box-shadow: inset 5px 0 red, inset 0 5px green, inset -5px 0 blue, inset 0 -5px orange;
 }
 
-.duocolored-shadow {
+.twocolored-shadow {
     position: relative;
 }
 
-    .duocolored-shadow::before,
-    .duocolored-shadow::after {
+    .twocolored-shadow::before,
+    .twocolored-shadow::after {
         content: '';
         position: absolute;
         left: 2%;
@@ -95,12 +95,12 @@ strong {
         z-index: -1;
     }
 
-    .duocolored-shadow::before {
+    .twocolored-shadow::before {
         bottom: 0;
         box-shadow: 0 5px 0 green;
     }
 
-    .duocolored-shadow::after {
+    .twocolored-shadow::after {
         top: 0;
-        box-shadow: 0 -5px 0 darkorange;
+        box-shadow: 0 -5px 0 orange;
     }

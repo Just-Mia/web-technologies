@@ -20,7 +20,7 @@ header {
     width: 100px;
 }
 
-.horizontal-menu {
+.horizon-menu {
     float: inline-end;
     list-style-type: none;
     margin: 0;
@@ -125,19 +125,19 @@ li {
 }
 
 .rounded {
-    border-image-slice: 184 175 184 175;
+    border-image-slice: 70 120 60 120;
     border-image-width: 20px 20px 20px 20px;
     border-image-outset: 20px;
     border-image-repeat: stretch stretch;
-    border-image-source: url("../img/border_1.png");
+    border-image-source: url("../img/rough-edges.png");
     border-style: solid;
 }
 
 .repeating-circles {
-    border-image-slice: 184 175 184 175;
+    border-image-slice: 130 130 130 130;
     border-image-width: 31px 22px;
     border-image-outset: 26px 20px;
     border-image-repeat: repeat repeat;
-    border-image-source: url("../img/border_1.png");
+    border-image-source: url("../img/rough-edges.png");
     border-style: solid;
 }
