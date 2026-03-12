@@ -1,6 +1,6 @@
 //function findMinMax(arr) {
 //    if (arr.length === 0) {
-//        return "Масив порожній";
+//        return "Empty";
 //    }
 
 //    let min = arr[0];
@@ -27,8 +27,8 @@
 //    return obj1.name === obj2.name && obj1.age === obj2.age;
 //}
 
-//let person1 = { name: "Anna", age: 20 };
-//let person2 = { name: "Anna", age: 20 };
+//let person1 = { name: "B", age: 1 };
+//let person2 = { name: "B", age: 1 };
 
 //console.log(compareObjects(person1, person2));
 
@@ -39,7 +39,7 @@
 //    return number >= min && number <= max;
 //}
 
-//console.log(isInRange(5, 1, 10));
+//console.log(isInRange(0, 1, 12));
 
 
 
@@ -53,52 +53,54 @@
 
 
 
+
 //function getGradeText(grade) {
 //    if (grade >= 90) {
-//        return "Відмінно";
+//        return "A-mark";
 //    } else if (grade >= 70) {
-//        return "Добре";
+//        return "C-mark";
 //    } else if (grade >= 50) {
-//        return "Задовільно";
+//        return "D-mark";
 //    } else {
-//        return "Незадовільно";
+//        return "F-mark";
 //    }
 //}
-
+//console.log(getGradeText(80));
 
 
 //function getGradeTextTernary(grade) {
-//    return grade >= 90 ? "Відмінно" :
-//        grade >= 70 ? "Добре" :
-//            grade >= 50 ? "Задовільно" :
-//                "Незадовільно";
+//    return grade >= 90 ? "A-mark" :
+//        grade >= 70 ? "C-mark" :
+//            grade >= 50 ? "D-mark" :
+//                "F-mark";
 //}
-
+//console.log(getGradeTextTernary(4));
 
 
 
 
 //function getSeason(month) {
 //    if (month === 12 || month === 1 || month === 2) {
-//        return "Зима";
+//        return "W";
 //    } else if (month >= 3 && month <= 5) {
-//        return "Весна";
+//        return "Sp";
 //    } else if (month >= 6 && month <= 8) {
-//        return "Літо";
+//        return "S";
 //    } else if (month >= 9 && month <= 11) {
-//        return "Осінь";
+//        return "F";
 //    } else {
-//        return "Невірний місяць";
+//        return "Error";
 //    }
 //}
-
+//console.log(getSeason(4));
 
 
 
 //function getSeasonTernary(month) {
-//    return (month === 12 || month === 1 || month === 2) ? "Зима" :
-//        (month >= 3 && month <= 5) ? "Весна" :
-//            (month >= 6 && month <= 8) ? "Літо" :
-//                (month >= 9 && month <= 11) ? "Осінь" :
-//                    "Невірний місяць";
+//    return (month === 12 || month === 1 || month === 2) ? "   W" :
+//        (month >= 3 && month <= 5) ? "Sp" :
+//            (month >= 6 && month <= 8) ? "S" :
+//                (month >= 9 && month <= 11) ? "F" :
+//                    "Error2";
 //}
+//console.log(getSeasonTernary(6));
