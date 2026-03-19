@@ -21,7 +21,7 @@
 
 
 //function task2() {
-//    let n = 5;
+//    let n = 3;
 //    let factorial = 1;
 
 //    for (let i = 1; i <= n; i++) {
@@ -64,7 +64,7 @@
 //            break;
 
 //        case 5:
-//            result = "5";
+//            result = "tr";
 //            break;
 
 //        case 6:
@@ -133,7 +133,7 @@
 
 
 
-//const countVowels = (str) => {
+const countVowels = (str) => {
   
 
 //    let vowels = "eyuioaEYUIOA";
