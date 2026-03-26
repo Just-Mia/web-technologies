@@ -1,0 +1,82 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Laboratory Work #5 - JS</title>
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+
+    <h1>Lab 5</h1>
+
+    <section>
+        <h2>1</h2>
+        <select id="bulbType" onchange="resetBulb()">
+            <option value="Regular">Regular Bulb</option>
+            <option value="Energy-saving">Energy-saving</option>
+            <option value="LED">LED (Dimmable)</option>
+        </select>
+        <div id="lamp" class="lamp"></div>
+        <div class="controls">
+            <button onclick="toggleLamp()">Switch ON/OFF</button>
+            <button onclick="setBrightness()">Set Brightness</button>
+        </div>
+        <p id="bulbStatus">Status: Off</p>
+    </section>
+
+    <section>
+        <h2>2</h2>
+        <div class="traffic-light">
+            <div id="red" class="light red"></div>
+            <div id="yellow" class="light yellow"></div>
+            <div id="green" class="light green"></div>
+        </div>
+
+        <div class="status-box" id="state-description">Current State: non</div>
+        <div class="timer-display" id="timer-display">Next change in: --s</div>
+
+        <div class="controls">
+            <button id="startBtn">Start Auto Cycle</button>
+            <button id="nextBtn">Manual Next State</button>
+            <button id="configBtn">Configure Durations</button>
+            <button id="stopBtn">Stop / Reset</button>
+        </div>
+    </section>
+
+    <section class="Unsection">
+        <h2>3</h2>
+        <div id="clock" class="clock"></div>
+
+        <h2>----</h2>
+        <input type="datetime-local" id="deadline">
+        <button id="startTimer">Старт</button>
+        <p id="timer"></p>
+
+        <h2>----</h2>
+        <input type="month" id="monthPicker">
+        <div id="calendar" class="calendar"></div>
+
+        <h2>----</h2>
+        <input type="date" id="birthday">
+        <button id="calcBirthday">Порахувати</button>
+        <p id="birthdayResult"></p>
+    </section>
+
+    <section>
+        <h2>4</h2>
+
+        <button id="add">Додати товар</button>
+        <button id="delete">Видалити товар</button>
+        <button id="update">Оновити товар</button>
+        <button id="search">Пошук товару</button>
+        <button id="order">Зробити замовлення</button>
+        <button id="show">Показати всі</button>
+
+<pre id="output"></pre>
+    </section>
+
+    
+</body>
+</html>

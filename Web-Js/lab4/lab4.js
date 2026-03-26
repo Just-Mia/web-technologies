@@ -38,7 +38,7 @@ function task2() {
     console.log("Filtered:", filtered);
 
  
-    let joined = filtered.join(", ");
+    let joined = filtered.join(", and ");
     console.log(" ", joined);
 }
 
@@ -49,7 +49,7 @@ function task3() {
     let employees = [
         { name: "I", age: 25, position: "dev" },
         { name: "A", age: 30, position: "des" },
-        { name: "B", age: 28, position: "devê" }
+        { name: "B", age: 28, position: "dev" }
     ];
 
    
@@ -187,7 +187,7 @@ function task7() {
     };
 
    
-    student.subjects = ["Math", "Comp"];
+    student.subjects = ["Eng", "Fre"];
 
    
     delete student.age;
