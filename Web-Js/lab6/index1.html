@@ -1,0 +1,83 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab 6</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+
+
+        <h1>Lab6</h1>
+        <div id="total-price-display">Total Value: 0 uah</div>
+    </header>
+
+    <main>
+        <section class="container">
+            <h2>Product Catalog</h2>
+            <div class="controls">
+                <div id="category-filters" class="btn-group"></div>
+                <div class="btn-group">
+                    <button id="sort-price" class="btn-secondary">Sort by Price</button>
+                    <button id="sort-created" class="btn-secondary">By Date Created</button>
+                    <button id="sort-updated" class="btn-secondary">By Date Updated</button>
+                    <button id="reset-prod-sort" class="btn-danger">Reset</button>
+                </div>
+            </div>
+            <div id="product-list" class="grid-container"></div>
+            <p id="empty-msg" class="hidden">The product list is empty. Add a new item!</p>
+            <button id="open-add-modal" class="btn-main">Add New Product</button>
+        </section>
+
+        <section class="container">
+            <h2>Personal To-Do List</h2>
+            <div class="todo-input-group">
+                <input type="text" id="todo-input" placeholder="What needs to be done?" required>
+                <button id="add-todo-btn" class="btn-small">+</button>
+               <p>                                   </p>
+            </div>
+            <div class="btn-group">
+                <button id="sort-todo-date" class="btn-secondary">Sort by Date</button>
+                <button id="sort-todo-status" class="btn-secondary">Sort by Status</button>
+                <button id="sort-todo-updated" class="btn-secondary">Sort by Updated</button>
+            </div>
+            <ul id="todo-list"></ul>
+        </section>
+    </main>
+
+    <div id="modal" class="modal hidden">
+        <div class="modal-content">
+            <h3 id="modal-title">Product Information</h3>
+            <form id="product-form">
+                <input type="text" id="p-name" placeholder="Product Name" required>
+                <input type="number" id="p-price" placeholder="Price (uah)" min="0" required>
+                <select id="p-category" required>
+                    <option value="">-- Choose Category --</option>
+                    <option value="Fruits">Fruits</option>
+                    <option value="Berries">Berries</option>
+                    <option value="Unnamed category">Unnamed category</option>
+                </select>
+                <input type="url" id="p-image" placeholder="Image URL" required>
+                <div class="form-actions">
+                    <button type="submit" class="btn-main">Save Product</button>
+                    <button type="button" id="close-modal" class="btn-secondary">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div id="snackbar"></div>
+
+    <script src="script.js" defer></script>
+
+    https://img.freepik.com/free-psd/close-up-delicious-apple_23-2151868338.jpg?semt=ais_incoming&w=740&q=80
+    https://rainierfruit.com/wp-content/uploads/2021/10/Rainier-Fruit-Pears.png
+
+    https://gpgroup.biz/wp-content/uploads/2020/05/product-strawberry.jpg
+    https://frostik.rv.ua/storage/products_images/big/100c53962d5f6a33fd8de6d2f07e193f.png/yNEfFpKtxn8I3C0Km2vi2o2q4BjcIJGYMwOeas942iKFR7CDDCWkZ7ZELl1oJLiZzOZ6rg8vLauorKtranTo9z34yvl7L/AMJ3/pO6lVyiy1yIIMRpHP8AVX/h69/Xth3tt16jmq+L5fOeF/f/AErbfUphERd64iIgIiICIiAiIgIiICIiAiIgIiICIiAiLE+1MBg1Gg8i4BBlReWPBzBBHTNekEbf15+opyM3nJo68z0C5zb7Ga+J1Rxc46k/RTvHFs+9DZyaB88/qq/Rtw5rWvUK+0LeFlqU4wgR81+C8XFmENg8yty973psEkhU+tf2NwDTAzJPIDMq3KDS78N35aAHWd7w6m8HuN8u62bQqHc99xVpuJyxD4Ex9VfrUF5Pnx+5E/wyyNOm+PDsM1J3PeJpVGvGcajodlC13QRG+vksgqxC87UxO4Vie9rXa/SOGvLW2RxjcvDfyBWa7fSJSeYq0H0x+IEPHnkD8AVSbbTE48MzAMZ9FKUrDhjIeIaL6PHEWxxafmG0W26lZLUyo0PpuDmnQjMLMuWcKX39mtJYT908w4bA7OH70XU1Fq6laJ2IiKqRERAREQERaN9W/wBTSc/fRvc/ufJBG8XcVU7DTBLTUqOyZTbqTzcfdb1+SoVTi29KrjFajZ59ljGNcY6l8z8ltW+t6x0uGI6knWeaibW9oBhgxZjFuAtq1iFZlLf/AHu02cNFaoyqTvhDT/jCtXD3G1G0EMd9285CTkex2XJLVY2OjEcx1WOw3a9zvBUiM5OgS/CK7t0jcvohFTrl4rayk1lbE57csTQDI2mTqpdvFFnO7h/b+i4f6rD/AJQmLRKaWped4MoML3noANXHkF7sltp1BLHh3ODmO41Cod/3kK1YnF4WyGjkOfcrppq3cek7ZLXfFaqSXPhu1NmTQOp1ce+XQKFvq1erpwxuZG2XwWwK7G6KIvu2NyEraJV0jLHelpY7FSrPb0JKvXC/H5Lm0rWA2chVGQnYP5A8/jzXN6tuI2Whar3aJDvgpmIn2Oh+l0upYqg5A/KFyKz8T1dBLidAMz5Lo1wW37fdtanVeIs/hD3H/wDM5txf05jsF+XXwfRp0gKIMvHirHN/9o90JrocztjbRVJLmnsf0Xuz3RaBSc8UnHF4RGeWrj+QXabsuGgxphgJGs5k/Fa912A46zyzBifDcQjwgACB8SqzXcNY1DhNV9SmYMtcNiIK7Bw/eP2iy0qh9rDDu4yKy3/dlne0ivTDwdDEOnm0jMKduq6aH/xtM2cyaQM/iP4g7+ZcvmYOdImvwwvHWlatjDHY/Jeabp02Xq0VQQ4cwoi8LyFGk507QOp5BeRxm06hlFdt+pevqyCXa7clmff8yQZ5HkuW1L0qPdmSZ2H0W/TttRhAe17S4SA5paSOYBGYXv0mKxFW/pcKVtxPk8123hS2+ts1Nx1Awn+3T5QuB3HYK1V0imQ3cuyHzXXeGr7o2al6p5JMz4QDqAOfRZ5vIxV6m0ESuyKOsd9Uamj4PJwLfzyUiq1vW0brK4iIrAiIgKmcW3o1zvVQYYTJyzJ/RXNUHjOyFlbEIh+emU7gnfPPzXH5uS+PHyp+VLzOukE6kDJa89iJUXeFirHFgwOnbFB+eXzW66oJjTvoctRyyXv1pEZbc4/2uCn6hmj52x+pMOeXlUtFJ33lN7ROpEty5OHhI81sXFec1HDFqAfgr4KvcgjP9OqjLXcdF9QVGt9XUGeJogOnZ7d9sxByW1v1CMlJpeEzk3GmazWiY26Tqttj8tQI81FtpYCWmRB2/VZfXRkRlpOp8+a8q1I2pCQZasOYJ5ZZfkVpW9mLx0nBr959lwH16rHUf8Iy8v2VqvqGTmfor4cmTDbdJWi2kVa+JHNJa5pa5uoP0VWvK93PeXEkqzX3dZtQGAD1o0Ogw74zyWOw8MWamMVd5qkcnYWzGUNGbhtmR+cfTeLm+tTlrTWLbhDWS+PDDs1oXjbWuzhWtt1vcYpWCzNBzDqriRHUD2T0JUrd90tZhNe7bO5uYLw1xEgZy1xPfWYzAK6evW1u3PritVTxMFRzaby3G0HJwBkSN4zXd7BaG+rZBygR2hUW8uGLOQ6pQY2k7PJpJbP9J08lXqXF9WgBTIktOZnbolo6I7dZvG1NY0uOo5ZKtVL3DwYc4Z6FxXN724lq15lxjktOzXu9kiTmqROl9On0LcDkMxyOamuH2VaLqj2ODG1G5scC4YtnQCIy+OSpno4s7nufXeSfdZOw94x108iujh8yf9K8z12zVKtYS1zjUe45nQYQAeULDabHZnMh9AVG7YpJ7tP6KbvS1gAmRACr9W9GactFWmOkeoRx0/OG7istOv62kXAifC7xEZe5P+1YLRZhVIrtwVHOEBxIMAbDkoBl5AEHkcjy/Rftw3katSuKYyxFzm7zOo6FcPmeLuZyV9k+tN+2W71bSariI90b9AvNjtVd0PpWcwdHugN8pzd3VfqXg21WxlFz/Aw6H3iNl0ao4BnYKvieNEf3WjtWletqteF521pE1G9wSAFK3Dx7aaJDarmVmbj2XAfyn9VB2+0B7yDMDWOig6ld+cANH5/BenNYn2u+iLovWlaaYqUnSNxu08nDYreXz9wlxS+x2lhcTgcQ2oP5T9RqvoBpnMLC1dStEv1ERVSLUvO72V2Fju4I1B2I/RbaKLVi0akcnvm7HUHlr2Doc8JHMfvJRrXECXHLrnPYbLrt7XayvTLH/wBrhq08wua3tc76T8FTMjQ7OGgz5dF4HleJOG24+1z3ppGisCNSM4EkAHsV7FQiBG/WFjqWdxmRtv05BYMxk0SDsRl3A91csWj5U1Hy2a4xCdx8wtSTyjy5KUuKk51VhFIvDDLmgFzMO4cYgLZv2x0Gl76VYNb+DFJbOon6K1ft3KeE62rjy4HONdHFadueGtxAyBlGniJyC3Wlh9l4PaVEXs1zbRZmgSMWMzpkYHzk+S6PHxxkvFZK99LlcVzNY2akPqH2vwjk0DeFgt92xXfUwEjaIgD1cOkdMs+ritqw28FoP4hPx0W1VtMgCA7pyC+krWKxqHREK3Su2o90vqADKB4pcSTk1oG25yAU61gpgl2YiO+hEdQWjPlI3Wje970rPTcRhxEnC3/obdVUL3vqpLXl+UyGt9kzqZG8c1rNuSIrpOGysBMEgnMmTv8ARUbjWxBrmvDhOhH1CnnXywicYB5E5qu1rBVt1oLaInm4zhbAzmASewBOaT6FcbK/HSumWf0cMY2ahtTz/wCunTpjyxlzj8B2WvX4YsQOE1LTTd/P6v5+AKkU2naU4LtTadBjIzAAPU6n991Z61tApkyIXPKVkdZ8TmVG1Wcx4XAdRJWre3EAc3Dijp+qvaEQk+Ir7D24GHOY/wCgoa01TAaILxk469OcATl5qFo2w45/DLtY0GXzhbVjc803BgcCWyYiCJ94ntKRI/auNhxY3Z5ZE+a3+F+IhZbXSrP9mcNURq0iJjvBWG47nrVv6S7U5kkg5NHYEztEnJXChwEw5mnRiBBqvrPc49WMLGt+JCie4FBu62F1tFSfarF//J5P1XTL74ibTphocMbtt4WlX4HYzxfZmCM8dKpWbBHIFxaB3KqN/XdVYS7EajW6z7Te8ajqEivybSN0XtiqkHodeualbbZy/EWtc84ogD2Qd+olc+u+1YaoMwDlK6Dd1txNkVMNQZEahw5kKaW1JMbRdezujC4HI6nVfRHCdYvsVmcTJ9SyT1DQD+S4PanakulxPKPgu8cJ2c07FZmnUUmk9yJ+qplTVLIiLFYREQFrW+wU6zcNRsjbYjsVsootWLRqRW38H0vdqPHwP0X7Q4Ns4MvL6nRxhvwbH5qxrTvW2ijTLt9GjmVzT4vj0jlNY6V41hjtVto2ZobAH4WMAHy2Cp95Xw+o77ulSpk+9ga5x7lwz+C0Lbbi9xJcSSc1hxQMsnHTpzPdedl8u9+q9Qwtkmenplhp4i7C1zyfE6BJP5R2WlxTc+FlGuR4CXUyRq3Qtd2kOHwU5d1lLi0ASSYHnuVaeILm9bY6lBntBngndwzE98x5rbwMczf6krY4me3GrVbvVjwjIZDkAoG8OKajZhxGWUeQX6y1kkseCDMEHboou23WSei92O43DSEbbrzfUMuJJ/fwWs+1uLQ2ZAUmy5+ajrys2B2WiTEwnbFSpmo9rG+04gDzMLvfCl2UrLSbTaBMSTu46rkfo/uz1toxOEtYC4/MAfmugXtexpMlphxcGMGhxEE5ZECAJJzjkdDXWxbrXe1JjC59RrWjcn9yq1Wt1mrsc8vY7OANXDl1CptutVe0Q2s6m3D7DWsa5oERqRiJ11J+JXihUwMwNFJ4OmGmGOktwiMEA677ZSFeMckys/2Sg6IYPyVI4i4dwUnPbONj3Yjs6mTNM98MZ8w4bLfsN9FhDKmU6GIE7/v/AGtjiG3A2cuET7OeYIdkRE58xyIT/aHP2ZAO6wfMf7Vr4KuT7XVAJ+7piXa76NjTuquz3hsfz2Vu9Hd7GjVDMMteQD010/eyql09tjp06gDRAawtaBAOUucfg1vk0KPvmuWNDjB3eTHh8RjFuJAjT3Spa1GlUwmQHtIcM4Mxh/IkT+eijbZSY/EGPqAOAD/Ze0NDjnDzAEg6AzvO1qzHyiYbFjq4WUqjT/EdBDfFLXaYQPdGUnPXsRG8QXW0VjnGeQH4S1pg5bGfislGrSoOaS712D2TiDabJyhjWZabEDVR143yazy4kTplP7lI9io8UcKik5tVn8N5hw0wu1HkR8x1WCxUXCATMaE6q+2dgtFOrRcMnMMHk4ZtPkQFF8L8I2q04Syi5rDBxvBYyOYJ9ryBVuvcoZuELjNptFNhzEy7+kZn5LvrRGQULwvw3TsdOG+J59t536DkFNrnvbcrxGhERUSIiICIiAqrxbUxODNmifM/9QrUqZxA6arzyP0AXJ5k/t6/LPJ9qBNDDoVkstGTJ/0vdOkXEZeSttzXJhh7xns36n9F52PDN541YVpNpZriu31YxuHiOg5D9SpdEXs46RSvGHVEac34/wDR766obVZh94c6lMZYz+Jn83Mb99eeWiyFpIdIIyIIgg9RsvotR16XFZrR/GoMeeZEO/5CD81tS/FEw+dKwhRNopBzg0DE4mA0CSTyAGZK+hx6ObumTZiehq1Y+GJTd13HZrP/AALNSpdWMaCe51K0nLBxcH4KoeobWFRhY/HBa5pa4BuQkHMZysHGNVrqtHCZhj3d3HD9GQuj+kC6sNY1Q3+IBJ6gBp+Qb8Vze9HsFamajSWwQCCBExly90a8yrV/J/CHr2mqGNNMEy3MA+0SA44oGftHIzGi3Kz3tFN7snuiW5yIa3ygTC3jQh0UXjFUE+rfhIaMTTDcWRcekZbE6b9GzNaRUtDw90SKTCIjJ0GPBTYPDJJ2zIU8uka7V+87JRdUJqOLWDWM/ERlmNsQHxUNbXfcPAMgO8PPt+fyW3e1YV6xwDwA6gmDGQAkAkdcuwS9mDAKYGUYj5aDzKtPaI6Wz0MXL9osd7tLZxspsZI99rarh8y1UHha0xUaD+yu/wDoPuY2e7GOcIdXe6sf6TDWf4tB81yLjS4vsl8V2YcNNz/XU+rKnihvQOxt/tWFZ7WlmvW8nQ4NzJyE5xscjlp03ULabW6jSDW1cLvwsJbMyS50e0RMCeXw3r2u8P8AE0+Y+qhKt1OJzK1mERL8p3w4nxEkcth2GgUzZLTJGaiKdzcypy7bFhhRESTK8cFWUveBqS4fPJdoaIyC556NLu1eRkPz2XRFlkntaoiIs0iIiAiIgIiICqV+3ZVfXhjZa7xSNucnuraiyy4oyRqVbV5Iq67mbShzvE/5Dt16qVRFelIpGoTERHoREVkiIiAiIg0r3u5tek5ju4PI7FcV4q4ffTc5lRnbcEdF3dat4XfTrNw1WBw25jsRmFel+KJjb5nbZ3MyxEtmcL/EJHLceRWW0l1TJ5kTMCB2mNfNdfvL0Z03kmnaCzo5gf8AMELQp+ij8Vs+FL9Xrb6lVdS5dRoAaBWDhHgqpb6oc4FtnDvvH6YgPcp8yeeg7wD026vRvY6RDn46xG1QjB/xaBPYyrfTYGgAAADIACAByAVLZfwmKvyjSDWta0ANaAABoABAA8lWOPeDWXhTaQQyvTk039Dqx38pgdiO4NqRZROu1nztbrqq2dxp1qZY4bHQjm06EdQo59LovpG32ClWbgq02vbycAfMcj1Cqls9GljeZa6tT6NeCP8AME/Nbxlj5U4uM06E7KzcM8PVLQ8NY3Ie073Wjqfouh2H0b2OmZcatXo94A/wAVsstmZTaGU2NY0aBoAHyUWy/girBdV3toUm02aDU8zuStxEWC4iIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiIP/Z
+
+    https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUOmaWS04yOuZpd_uza542Rms2TOFI4WO-fQ&s
+</body>
+</html>

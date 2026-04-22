@@ -91,8 +91,6 @@ const sequence = [
     { id: 'red', type: 'solid', label: 'RED' },
     { id: 'yellow', type: 'solid', label: 'YELLOW' },
     { id: 'green', type: 'solid', label: 'GREEN' },
-
-
     { id: 'yellow', type: 'blink', label: 'YELLOW' },
 ];
 
