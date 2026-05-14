@@ -1,0 +1,132 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Lab 8</title>
+
+</head>
+<body>
+
+    <div class="memory-game-widget">
+        <button id="open-settings" class="menu-trigger">Game Settings</button>
+
+        <div id="settings-modal" class="settings-modal">
+            <div class="modal-content">
+                <button id="close-settings" class="close-modal">&times;</button>
+                <h2 style="margin:0">Game Settings</h2>
+
+                <div class="control-group">
+                    <label>Grid Size (Rows x Cols):</label>
+                    <div class="input-row">
+                        <input type="number" id="rows" value="4" min="2">
+                        <span>x</span>
+                        <input type="number" id="cols" value="4" min="2">
+                    </div>
+                </div>
+
+                <div class="control-group">
+                    <label>Difficulty (Timer):</label>
+                    <select id="difficulty">
+                        <option value="180">Easy (3 min)</option>
+                        <option value="120" selected>Normal (2 min)</option>
+                        <option value="60">Hard (1 min)</option>
+                    </select>
+                </div>
+
+                <div class="control-group">
+                    <label>Players:</label>
+                    <select id="player-mode">
+                        <option value="1">1 Player</option>
+                        <option value="2">2 Players</option>
+                    </select>
+                </div>
+
+                <div id="player-names" class="control-group">
+                    <input type="text" id="p1-name" placeholder="Player 1 Name" value="Player 1">
+                    <input type="text" id="p2-name" placeholder="Player 2 Name" value="Player 2" style="display:none;">
+                </div>
+
+                <div class="control-group">
+                    <label>Total Rounds:</label>
+                    <input type="number" id="rounds-limit" value="1" min="1">
+                </div>
+
+                <button id="start-game" class="start-btn">Start New Game</button>
+                <button id="restart-game" class="restart-btn">Restart</button>
+                <button id="reset-settings" class="reset-btn">Reset Defaults</button>
+            </div>
+        </div>
+
+        <div class="status-bar">
+            <div>Round: <span id="cur-round">1</span></div>
+            <div>Turn: <b id="cur-player-name">---</b></div>
+            <div>Timer: <span id="timer">00:00</span></div>
+        </div>
+
+        <div id="cards-container" class="cards-container"></div>
+
+        <div class="info-footer">
+            <div id="move-display">Moves: 0</div>
+            <div id="pair-display">Pairs: 0 / 0</div>
+        </div>
+
+        <div id="game-overlay" class="game-overlay">
+            <div style="background: white; color: black; padding: 30px; border-radius: 15px;">
+                <h2 id="overlay-title">Time's Up!</h2>
+                <p id="overlay-text">Next session starting...</p>
+                <button id="next-session-btn" class="start-btn">Continue</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="my-slider" class="slider-container">
+        <div class="slider-track">
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="task-column">
+            <h2>To Do</h2>
+            <ul class="tasks">
+                <li class="task" draggable="true">F</li>
+            </ul>
+        </div>
+        <div class="task-column">
+            <h2>In Progress</h2>
+            <ul class="tasks">
+                <li class="task" draggable="true">A</li>
+                <li class="task" draggable="true">B</li>
+                <li class="task" draggable="true">
+                 C
+                </li>
+            </ul>
+        </div>
+        <div class="task-column">
+            <h2>Done</h2>
+            <ul class="tasks">
+                <li class="task" draggable="true">D</li>
+                <li class="task" draggable="true">E</li>
+            </ul>
+        </div>
+    </div>
+
+    <br>
+    <br>
+
+    <div id="controls">
+        <button id="editToggle" class="btn-edit">Edit</button>
+    </div>
+    <div class="div4">
+        <div class="grid" id="cardGrid">
+        </div>
+    </div>
+
+    <br>
+    <br>
+    <br>
+    <script src="script.js"></script>
+
+</body>
+</html>

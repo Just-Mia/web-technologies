@@ -1,0 +1,150 @@
+﻿* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+
+    background: white;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.container {
+    background: white;
+    width: 100%;
+    max-width: 500px;
+    padding: 30px;
+    border-radius: 15px;
+    border: 1px solid grey;
+
+}
+
+.tabs {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.tab-btn {
+    flex: 1;
+    padding: 12px;
+    border: none;
+    cursor: pointer;
+    background: #ddd;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+    .tab-btn.active {
+        background: #6c859b;
+        color: white;
+    }
+
+.form {
+    display: none;
+}
+
+.active-form {
+    display: block;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 18px;
+    position: relative;
+}
+
+    .form-group label {
+        display: block;
+        margin-bottom: 6px;
+    }
+
+    .form-group input,
+    .form-group select {
+        width: 100%;
+        padding: 12px;
+        border: 2px solid #ccc;
+        border-radius: 8px;
+        font-size: 15px;
+        transition: 0.3s;
+    }
+
+        .form-group input:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: #b5dcff;
+        }
+
+.success {
+    border-color: green !important;
+}
+
+.error-input {
+    border-color: red !important;
+}
+
+.error {
+    color: red;
+    font-size: 13px;
+    margin-top: 5px;
+    display: block;
+}
+
+button[type="submit"] {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    background: #6c859b;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+    button[type="submit"]:hover {
+        background: #b5dcff;
+    }
+
+.password-group i {
+    position: absolute;
+    right: 15px;
+    top: 42px;
+    cursor: pointer;
+    color: gray;
+}
+
+.radio-group {
+    display: flex;
+    gap: 20px;
+}
+
+.checkbox-group {
+    margin-bottom: 20px;
+}
+
+#successMessage {
+    margin-top: 20px;
+    text-align: center;
+    font-weight: bold;
+    color: green;
+}
+
+@media (max-width: 600px) {
+
+    .container {
+        padding: 20px;
+    }
+
+    .tab-btn {
+        font-size: 14px;
+    }
+}

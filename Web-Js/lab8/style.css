@@ -1,0 +1,466 @@
+﻿.memory-game-widget {
+    --primary: #0E9D57;
+    --bg-gradient: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    position: relative;
+    width: 100%;
+    min-height: 80vh;
+    background: var(--bg-gradient);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+    overflow: hidden;
+    border-radius: 12px;
+}
+
+
+.menu-trigger {
+    padding: 10px 20px;
+    background: #333333;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-bottom: 20px;
+    z-index: 10;
+}
+
+
+.settings-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    display: none; 
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 400px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.close-modal {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 24px;
+    cursor: pointer;
+    border: none;
+    background: none;
+}
+
+
+.control-group {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.input-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+    .input-row input {
+        width: 60px;
+    }
+
+
+.status-bar {
+    display: flex;
+    gap: 20px;
+    background: white;
+    padding: 10px 25px;
+    border-radius: 50px;
+    margin-bottom: 20px;
+    border: dashed grey;
+
+}
+
+.cards-container {
+    display: grid;
+    gap: 10px;
+    perspective: 1000px;
+}
+
+
+.card {
+    width: 70px;
+    height: 70px;
+    position: relative;
+    cursor: pointer;
+    transform-style: preserve-3d;
+    transition: transform 0.4s;
+}
+
+    .card.toggled {
+        transform: rotateY(180deg);
+    }
+
+.card-front, .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card-front {
+    background: #333333;
+    border: 2px solid #fff;
+}
+
+.card-back {
+    background: white;
+    transform: rotateY(180deg);
+    border: 2px solid #333333;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+    .card-back img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    }
+
+
+.info-footer {
+    margin-top: 20px;
+    display: flex;
+    gap: 30px;
+    font-weight: bold;
+}
+
+
+.start-btn {
+    background: #333333;
+    color: white;
+    border: none;
+    padding: 12px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.restart-btn {
+    background: #454545;
+    color: white;
+    border: none;
+    padding: 12px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.reset-btn {
+    background: #666;
+    color: white;
+    border: none;
+    padding: 8px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+
+.game-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.85);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 500;
+    color: white;
+    text-align: center;
+}
+
+
+
+/*div2*/
+
+.slider-container {
+    position: relative;
+    max-width: 800px;
+    margin: 20px auto;
+    overflow: hidden; 
+    border-radius: 8px;
+  
+}
+
+.slider-track {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    will-change: transform;
+}
+
+.slide {
+    min-width: 100%; 
+    box-sizing: border-box;
+}
+
+    .slide img {
+        width: 100%;
+        display: block;
+        object-fit: cover;
+        height: 400px;
+    }
+
+
+.slider-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 15px;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.prev-arrow {
+    left: 10px;
+}
+
+.next-arrow {
+    right: 10px;
+}
+
+
+.slider-dots {
+    position: absolute;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    background: rgba(255, 255, 255, 0.5);
+    border: 1px solid black;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+    .dot.active {
+        background: black;
+    }
+
+
+@media (max-width: 600px) {
+    .slide img {
+        height: 250px;
+    }
+
+    .slider-arrow {
+        padding: 10px;
+    }
+}
+
+
+
+
+
+
+/*div3*/
+
+body {
+    font-family: "Arial", sans-serif;
+}
+
+.container {
+    display: flex;
+    gap: 0.5rem;
+    margin-left: 10%;
+    margin-right: 10%;
+
+}
+
+.task-column {
+    border:  dashed  grey;
+    border-radius: 5px;
+    margin: 10px;
+    padding: 10px;
+    flex: 1;
+}
+
+.tasks {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    list-style: none;
+    padding: 0;
+}
+
+.task-column h2 {
+    text-align: center;
+}
+
+.task {
+    color: white;
+    background-color: #333333;
+    border: 1px solid #eeeeee;
+    border-radius: 3px;
+    padding: 8px;
+    cursor: grab;
+}
+
+    .task:active {
+        cursor: grabbing;
+    }
+
+@media (width < 600px) {
+    .container {
+        flex-direction: column;
+    }
+}
+
+#dragged-task {
+    opacity: 0.2;
+}
+
+.placeholder {
+    border: 1px solid #cccccc;
+    border-radius: 3px;
+}
+
+
+/*div4*/
+
+:root {
+    --card-bg: #ffffff;
+    --delete-color: #ff4d4d;
+}
+
+#controls {
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: center;
+}
+
+.btn-edit {
+    padding: 10px 25px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+    .btn-edit.active {
+        background-color: #454545;
+    }
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 20px;
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    min-height: 200px;
+}
+
+.div4 {
+    padding: 0 10%;
+}
+
+.card2 {
+    background: var(--card-bg);
+    border-radius: 12px;
+    width: 100px;
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px dashed grey;
+    position: relative;
+    user-select: none;
+    font-weight: bold;
+    color: #333;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.delete-btn {
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    width: 24px;
+    height: 24px;
+    background: #ff4949;
+    color: white;
+    border-radius: 50%;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 18px;
+    border: 2px solid white;
+    z-index: 10;
+}
+
+
+.edit-mode .card2 {
+    animation: wiggle 0.3s infinite ease-in-out;
+    cursor: grab;
+}
+
+    .edit-mode .card2:nth-child(even) {
+        animation-duration: 0.25s;
+        animation-direction: reverse;
+    }
+
+.edit-mode .delete-btn {
+    display: flex;
+}
+
+@keyframes wiggle {
+    0% {
+        transform: rotate(-1deg);
+    }
+
+    50% {
+        transform: rotate(1.5deg);
+    }
+
+    100% {
+        transform: rotate(-1deg);
+    }
+}
+
+.card2.dragging {
+    opacity: 0.5;
+    animation: none;
+    cursor: grabbing;
+}
