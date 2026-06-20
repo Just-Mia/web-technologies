@@ -1,0 +1,344 @@
+﻿<!doctype html>
+<html lang="uk">
+<head>
+    <meta charset="utf-8">
+    <title>Анкета </title>
+    <link rel="stylesheet" href="stylе.css">
+</head>
+<body>
+    <div align="center">
+        <a href="C:\Users\Redmi\web-technologies\wt_lab_3\index.html">
+            повернутися на Головну сторінку
+        </a>
+    </div>
+    <main>
+        <h1>Анкета</h1>
+
+
+
+
+        <section>
+            <h2>Форма 1</h2>
+
+            <form method="get" action="">
+
+                <fieldset>
+                    <legend>Особисті дані</legend>
+
+
+                    <div>
+                        <label for="user-name">Ім'я:</label>
+                        <input type="text"
+                               id="user-name"
+                               title="!"
+                               name="name"
+                               required>
+                    </div>
+
+
+                    <div>
+                        <label for="user-surname">Прізвище:</label>
+                        <input type="text"
+                               id="user-surname"
+                               name="surname">
+                    </div>
+
+
+                    <div>
+                        <label for="about">Коротко про себе:</label>
+                        <textarea id="about" name="about"></textarea>
+                    </div>
+
+
+                    <div>
+                        <label for="pwd">
+                            Пароль:
+                        </label>
+                        <input type="password"
+                               id="pwd"
+                               name="password"
+                               placeholder="Abc123"
+                               pattern="(?=.*[A-Z])(?=.*[a-z])(?=.*\d)[A-Za-z\d]{6}"
+                               title="6 символів, хоча б 1 велика, 1 мала літера та 1 цифра"
+                               tabindex="4"
+                               required>
+                    </div>
+
+
+                    <div>
+                        <label for="email1">Email:</label>
+                        <input type="email"
+                               id="email1"
+                               name="email"
+                               placeholder="name@example.com"
+                               autocomplete="off"
+                               pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+                               title="Наприклад: name@example.com"
+                               tabindex="5"
+                               required>
+                    </div>
+
+
+                    <div>
+                        <label for="phone1">Моб. номер:</label>
+                        <input type="tel"
+                               id="phone1"
+                               name="phone"
+                               placeholder="+380501234567 або 0501234567"
+                               pattern="\+?\d{7,15}"
+                               title="Введіть цифри, допускається провідний +, 7–15 цифр"
+                               tabindex="6"
+                               required>
+                    </div>
+
+
+                    <div>
+                        <label for="dob">Дата народження:</label>
+                        <input type="date"
+                               id="dob"
+                               name="dob">
+                    </div>
+                </fieldset>
+
+
+                <fieldset>
+                    <legend>Питання з вибором </legend>
+
+
+                    <div>
+                        <p>Група А :</p>
+                        <label>
+                            <input type="radio" id="a1" name="group_a" value="a1">
+                            Варіант A1
+                        </label>
+                        <label>
+                            <input type="radio" id="a2" name="group_a" value="a2">
+                            Варіант A2
+                        </label>
+                        <label>
+                            <input type="radio" id="a3" name="group_a" value="a3">
+                            Варіант A3
+                        </label>
+                    </div>
+
+
+                    <div>
+                        <p>Група B :</p>
+                        <label>
+                            <input type="radio" id="b1" name="group_b" value="b1">
+                            Варіант B1
+                        </label>
+                        <label>
+                            <input type="radio" id="b2" name="group_b" value="b2" checked>
+                            Варіант B2
+                        </label>
+                        <label>
+                            <input type="radio" id="b3" name="group_b" value="b3">
+                            Варіант B3
+                        </label>
+                    </div>
+                </fieldset>
+
+
+                <fieldset>
+                    <legend>Питання з множинним вибором </legend>
+
+                    <label>
+                        <input type="checkbox" name="subscription" value="news">
+                        Підписатися на новини
+                    </label>
+                    <label>
+                        <input type="checkbox" name="subscription" value="updates">
+                        Отримувати оновлення
+                    </label>
+                    <label>
+                        <input type="checkbox" name="subscription" value="events">
+                        Запрошення на події
+                    </label>
+                    <label>
+                        <input type="checkbox" name="subscription" value="promo">
+                        Реклама і пропозиції
+                    </label>
+                </fieldset>
+
+
+                <fieldset>
+                    <legend>Випадні списки</legend>
+
+
+                    <div>
+                        <label for="fav-course">Улюблений курс :</label>
+                        <select id="fav-course" name="fav_course">
+                            <option value="course1">Курс 1</option>
+                            <option value="course2">Курс 2</option>
+                            <option value="course3" selected>Курс 3 </option> <
+                            <option value="course4">Курс 4</option>
+                            <option value="course5">Курс 5</option>
+                        </select>
+                    </div>
+
+
+                    <div>
+                        <label for="languages">Мови, якими володієте :</label>
+                        <select id="languages" name="languages" multiple>
+
+                            <option value="ukr">Українська</option>
+                            <option value="eng">Англійська</option>
+                            <option value="ital">Італійська</option>
+                            <option value="deu">Німецька</option>
+                            <option value="fra">Французька</option>
+                            <option value="esp">Іспанська</option>
+                        </select>
+                    </div>
+
+
+                    <div>
+                        <label for="themes">Оберіть тему :</label>
+                        <select id="themes" name="theme">
+                            <optgroup label="Програмування">
+                                <option value="cplus">C++</option>
+                                <option value="python">Python</option>
+                                <option value="javascript">JavaScript</option>
+                            </optgroup>
+                            <optgroup label="Природничі науки">
+                                <option value="analysis">Аналіз</option>
+                                <option value="algebra">Алгебра</option>
+                                <option value="geometry">Геометрія</option>
+                            </optgroup>
+                            <optgroup label="Фізика">
+                                <option value="mechanics">Механіка</option>
+                                <option value="electricity">Електрика</option>
+                                <option value="optics">Оптика</option>
+                            </optgroup>
+                            <optgroup label="Гуманітарні науки">
+                                <option value="history">Історія</option>
+                                <option value="philosophy">Філософія</option>
+                                <option value="literature">Література</option>
+                            </optgroup>
+                        </select>
+                    </div>
+                </fieldset>
+
+
+                <div>
+                    <label for="university-input">Університет:</label>
+                    <input list="universities" id="university-input" name="university">
+                    <datalist id="universities">
+                        <option value="Університет 1">
+                        <option value="Університет 2">
+                        <option value="Університет 3">
+                    </datalist>
+                </div>
+
+                <hr>
+
+
+                <div>
+                    <button type="submit">Submit </button>
+                    <button type="reset">Reset</button>
+                </div>
+            </form>
+        </section>
+
+        <hr>
+
+        <section>
+            <h2>Форма 2 </h2>
+
+            <form method="post" action="" enctype="multipart/form-data">
+                <fieldset>
+                    <legend>Додаткові контактні дані </legend>
+
+
+                    <div>
+                        <label for="email2">Email:</label>
+                        <input type="email"
+                               id="email2"
+                               name="email_post"
+                               placeholder="name@example.com"
+                               autocomplete="off"
+                               pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+                               tabindex="30"
+                               required>
+                    </div>
+
+
+                    <div>
+                        <label for="phone2">Телефон:</label>
+                        <input type="tel"
+                               id="phone2"
+                               name="phone_post"
+                               placeholder="+380501234567"
+                               pattern="\+?\d{7,15}"
+                               tabindex="31"
+                               required>
+                    </div>
+
+
+                    <div>
+                        <label for="notes">Додаткові нотатки :</label>
+                        <textarea id="notes" name="notes_post"></textarea>
+                    </div>
+
+
+                    <div>
+                        <label for="audio-upload">Завантажити аудіо :</label>
+                        <input type="file"
+                               id="audio-upload"
+                               name="audio_files"
+                               accept="audio/*"
+                               multiple>
+                    </div>
+                </fieldset>
+
+
+                <fieldset>
+                    <legend>Аудіокурси</legend>
+
+                    <label>
+                        <input type="radio" name="audio_frequency" value="never">
+                        Ніколи
+                    </label>
+                    <label>
+                        <input type="radio" name="audio_frequency" value="sometimes">
+                        Іноді
+                    </label>
+                    <label>
+                        <input type="radio" name="audio_frequency" value="often">
+                        Часто
+                    </label>
+                </fieldset>
+
+
+                <fieldset>
+                    <legend>Інтереси :</legend>
+                    <label>
+                        <input type="checkbox" name="interests" value="blog">
+                        Блог
+                    </label>
+                    <label>
+                        <input type="checkbox" name="interests" value="podcasts">
+                        Подкасти
+                    </label>
+                    <label>
+                        <input type="checkbox" name="interests" value="video">
+                        Відео
+                    </label>
+                    <label>
+                        <input type="checkbox" name="interests" value="news">
+                        Новини
+                    </label>
+                </fieldset>
+
+
+                <div>
+                    <button type="submit">Submit </button>
+                    <button type="reset">Reset</button>
+                </div>
+            </form>
+        </section>
+
+    </main>
+</body>
+</html>
+html>

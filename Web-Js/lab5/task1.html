@@ -1,0 +1,171 @@
+﻿<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Завдання 4</title>
+    <style>
+        body {
+            font-family: Arial;
+            text-align: center;
+        }
+
+        button {
+            margin: 5px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>Інтернет-магазин</h2>
+
+    <button id="add">Додати товар</button>
+    <button id="delete">Видалити товар</button>
+    <button id="update">Оновити товар</button>
+    <button id="search">Пошук товару</button>
+    <button id="order">Зробити замовлення</button>
+    <button id="show">Показати всі</button>
+
+<pre id="output"></pre>
+
+    <script>
+
+        /* =====================
+           СТРУКТУРИ ДАНИХ
+        ===================== */
+        let products = new Map();     // товари
+        let orders = new Set();       // замовлення
+        let history = new WeakMap();  // історія змін
+        let activeProducts = new WeakSet(); // активні продукти
+
+        /* =====================
+           ДОДАТИ ТОВАР
+        ===================== */
+        document.getElementById("add").addEventListener("click", () => {
+            let id = prompt("ID товару:");
+            let name = prompt("Назва:");
+            let price = +prompt("Ціна:");
+            let qty = +prompt("Кількість:");
+
+            let product = { id, name, price, qty };
+
+            products.set(id, product);
+            history.set(product, ["Створено"]);
+            activeProducts.add(product);
+
+            alert("Товар додано!");
+        });
+
+        /* =====================
+           ВИДАЛИТИ
+        ===================== */
+        document.getElementById("delete").addEventListener("click", () => {
+            let id = prompt("ID для видалення:");
+
+            if (products.has(id)) {
+                let product = products.get(id);
+                products.delete(id);
+
+                alert("Видалено!");
+            } else {
+                alert("Не знайдено");
+            }
+        });
+
+        /* =====================
+           ОНОВИТИ
+        ===================== */
+        document.getElementById("update").addEventListener("click", () => {
+            let id = prompt("ID товару:");
+
+            if (!products.has(id)) {
+                alert("Не знайдено");
+                return;
+            }
+
+            let product = products.get(id);
+
+            let price = +prompt("Нова ціна:");
+            let qty = +prompt("Нова кількість:");
+
+            product.price = price;
+            product.qty = qty;
+
+            // історія
+            let hist = history.get(product);
+            hist.push("Оновлено");
+            history.set(product, hist);
+
+            alert("Оновлено!");
+        });
+
+        /* =====================
+           ПОШУК
+        ===================== */
+        document.getElementById("search").addEventListener("click", () => {
+            let name = prompt("Назва товару:");
+
+            let result = [];
+
+            products.forEach(p => {
+                if (p.name.toLowerCase().includes(name.toLowerCase())) {
+                    result.push(p);
+                }
+            });
+
+            document.getElementById("output").innerText =
+                JSON.stringify(result, null, 2);
+        });
+
+        /* =====================
+           ЗАМОВЛЕННЯ
+        ===================== */
+        document.getElementById("order").addEventListener("click", () => {
+            let id = prompt("ID товару:");
+            let qty = +prompt("Кількість:");
+
+            if (!products.has(id)) {
+                alert("Товар не знайдено");
+                return;
+            }
+
+            let product = products.get(id);
+
+            if (product.qty < qty) {
+                alert("Недостатньо на складі");
+                return;
+            }
+
+            product.qty -= qty;
+
+            let order = { id, qty, date: new Date() };
+            orders.add(order);
+
+            let hist = history.get(product);
+            hist.push("Продано " + qty);
+            history.set(product, hist);
+
+            alert("Замовлення виконано!");
+        });
+
+        /* =====================
+           ПОКАЗАТИ ВСЕ
+        ===================== */
+        document.getElementById("show").addEventListener("click", () => {
+            let all = [];
+
+            products.forEach((p, id) => {
+                all.push({
+                    ...p,
+                    history: history.get(p)
+                });
+            });
+
+            document.getElementById("output").innerText =
+                JSON.stringify(all, null, 2);
+        });
+
+    </script>
+
+</body>
+</html>

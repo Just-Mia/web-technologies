@@ -1,0 +1,62 @@
+
+* {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    line-height: 40px;
+  
+}
+
+
+body {
+    padding: 20px;
+}
+
+
+p {
+    color: green;
+    text-align: center;
+    margin-bottom: 16px;
+}
+
+
+div {
+    text-align: justify;
+    margin: 18px 0;
+    padding: 10px;
+   
+}
+
+
+.red {
+    color: red;
+}
+
+
+.nowrap {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+#second {
+    font-style: italic;
+    font-weight: bold;
+}
+
+
+.shadow-text {
+    text-shadow: red 5px -5px 3px;
+}
+
+
+.first-block {
+    text-decoration: line-through;
+    text-transform: uppercase;
+    text-indent: 50px;
+}
+
+
+.second-block {
+    letter-spacing: 30px;
+    word-spacing: 50px;
+}
